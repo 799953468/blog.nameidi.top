@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="1BFE47B53478DD7107FF51441A17B259">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.nameidi.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="OpenWrt编译 LuCI - Applications添加插件应用说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenWrt编译 LuCI - Applications添加插件应用说明">
+<meta property="og:url" content="http://blog.nameidi.top/posts/85d98bc4.html">
+<meta property="og:site_name" content="Alfred&#39;s blog">
+<meta property="og:description" content="OpenWrt编译 LuCI - Applications添加插件应用说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-28T04:54:00.000Z">
+<meta property="article:modified_time" content="2021-02-01T11:37:47.645Z">
+<meta property="article:author" content="Alfred">
+<meta property="article:tag" content="OpenWrt">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.nameidi.top/posts/85d98bc4.html">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>OpenWrt编译 LuCI - Applications添加插件应用说明 | Alfred's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154808586-2"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-154808586-2');
+      }
+    </script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9a1e1c3b378849f4938bc1b3a946c43f"}'></script>
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alfred's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Alfred's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">时间不知不觉，我们后知后觉...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a></li>
+        <li class="menu-item menu-item-mikutools"><a href="https://mikutools.nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-tools fa-fw"></i>在线工具</a></li>
+        <li class="menu-item menu-item-homepage"><a href="https://nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-map fa-fw"></i>导航页</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div id="tp-weather-widget"></div>
+<script>
+  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+  window.SeniverseWeatherWidget('show', {
+    flavor: "bubble",
+    location: "WX4FBXXFKE4F",
+    geolocation: true,
+    language: "zh-Hans",
+    unit: "c",
+    theme: "auto",
+    token: "827a4ca8-cb3b-4b3b-9083-772d5f790e94",
+    hover: "enabled",
+    container: "tp-weather-widget"
+  })
+</script>
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9-LuCI-%E9%85%8D%E7%BD%AE%EF%BC%9A-%E5%B8%B8%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">选择 LuCI 配置： 常用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E9%83%A8"><span class="nav-number">2.</span> <span class="nav-text">全部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81-iPv6%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">支持 iPv6：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Alfred</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/799953468" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:y799953468@gmail.com" title="E-Mail → mailto:y799953468@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/799953468" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.nameidi.top/atom.xml" title="RSS → https:&#x2F;&#x2F;blog.nameidi.top&#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=576stzpgfpa&amp;m=0&amp;c=ff0&amp;cr1=f&amp;f=arial&amp;l=" async="async"></script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.nameidi.top/posts/85d98bc4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenWrt编译 LuCI - Applications添加插件应用说明
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-28 12:54:00" itemprop="dateCreated datePublished" datetime="2019-09-28T12:54:00+08:00">2019-09-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-01 19:37:47" itemprop="dateModified" datetime="2021-02-01T19:37:47+08:00">2021-02-01</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OpenWrt/" itemprop="url" rel="index"><span itemprop="name">OpenWrt</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/85d98bc4.html" class="post-meta-item leancloud_visitors" data-flag-title="OpenWrt编译 LuCI - Applications添加插件应用说明" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>OpenWrt编译 LuCI - Applications添加插件应用说明</p>
+<a id="more"></a>
+<p>OpenWrt 编译 LuCI —&gt; Applications 添加插件应用说明</p>
+<p>make menuconfig 进入定制界面<br>进入编译选项配置界面，.按照需要配置。( ‘*’ 代表编入固件，‘M’ 表示编译成模块或者 IPK 包， ‘空’不编译 )</p>
+<h2 id="选择-LuCI-配置：-常用"><a href="#选择-LuCI-配置：-常用" class="headerlink" title="选择 LuCI 配置： 常用"></a>选择 LuCI 配置： 常用</h2><p>L 大雕 选择 LuCI 配置：<br>LuCI —&gt; Applications —&gt; luci-app-accesscontrol # 访问时间控制<br>LuCI —&gt; Applications —&gt; luci-app-adbyby-plus # 广告屏蔽大师 Plus +<br>LuCI —&gt; Applications —&gt; luci-app-arpbind #IP/MAC 绑定<br>LuCI —&gt; Applications —&gt; luci-app-autoreboot # 高级重启<br>LuCI —&gt; Applications —&gt; luci-app-aliddns # 阿里 DDNS 客户端<br>LuCI —&gt; Applications —&gt; luci-app-ddns # 动态域名 DNS<br>LuCI —&gt; Applications —&gt; luc—&gt; Include V2ray #V2Ray 透明代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include Kcptun #Kcptun 代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include s-sR Server #S-S R 客户端<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include s-sR Socks and Tunnel #S-S R 代理<br>LuCI —&gt; Applications —&gt; luci-app-syncdial # 多拨虚拟网卡(原 macvlan)<br>LuCI —&gt; Applications —&gt; luci-app-upnp # 通用即插即用 UPnP(端口自动转发)<br>LuCI —&gt; Applications —&gt; luci-app-v2ray-pro #V2Ray 透明代理<br>LuCI —&gt; Applications —&gt; luci-app-vlmcsd #KMS 服务器设置<br>LuCI —&gt; Applications —&gt; luci-app-vsftpd #FTP 服务器<br>LuCI —&gt; Applications —&gt; luci-app-wifischedule #WiFi 计划<br>LuCI —&gt; Applications —&gt; luci-app-wireless-regdb #WiFi 无线<br>LuCI —&gt; Applications —&gt; luci-app-wol #WOL 网络唤醒<br>LuCI —&gt; Applications —&gt; luci-app-wrtbwmon # 实时流量监测<br>LuCI —&gt; Applications —&gt; luci-app-xlnetacc # 迅雷快鸟<br>Utilities —&gt; open-vm-tools # 打开适用于 VMware 的 VM Tools</p>
+<h2 id="全部"><a href="#全部" class="headerlink" title="全部"></a>全部</h2><p>LuCI —&gt; Applications —&gt; luci-app-accesscontrol # 访问时间控制<br>LuCI —&gt; Applications —&gt; luci-app-adblock #ADB 广告过滤<br>LuCI —&gt; Applications —&gt; luci-app-adbyby-plus # 广告屏蔽大师 Plus +<br>LuCI —&gt; Applications —&gt; luci-app-advanced-reboot #Linksys 高级重启<br>LuCI —&gt; Applications —&gt; luci-app-ahcp # 支持 AHCPd<br>LuCI —&gt; Applications —&gt; luci-app-aliddns # 阿里 DDNS 客户端<br>LuCI —&gt; Applications —&gt; luci-app-amule #aMule(骡子下载)下载工具<br>LuCI —&gt; Applications —&gt; luci-app-aria2 # Aria2 下载工具<br>LuCI —&gt; Applications —&gt; luci-app-arpbind #IP/MAC 绑定<br>LuCI —&gt; Applications —&gt; luci-app-asterisk # 支持 Asterisk 电话服务器<br>LuCI —&gt; Applications —&gt; luci-app-attendedsysupgrade # 固件更新升级相关<br>LuCI —&gt; Applications —&gt; luci-app-autoreboot # 支持计划重启<br>LuCI —&gt; Applications —&gt; luci-app-bcp38 #BCP38 网络入口过滤(不确定)<br>LuCI —&gt; Applications —&gt; luci-app-bird4 #Bird 4(未知)<br>LuCI —&gt; Applications —&gt; luci-app-bird6 #Bird 6(未知)<br>LuCI —&gt; Applications —&gt; luci-app-bmx6 #BMX6 路由协议<br>LuCI —&gt; Applications —&gt; luci-app-bmx7 #BMX7 路由协议<br>LuCI —&gt; Applications —&gt; luci-app-cjdns # 加密 IPV6 网络相关<br>LuCI —&gt; Applications —&gt; luci-app-clamav #ClamAV 杀毒软件<br>LuCI —&gt; Applications —&gt; luci-app-commands #Shell 命令模块<br>LuCI —&gt; Applications —&gt; luci-app-cshark #CloudShark 捕获工具<br>LuCI —&gt; Applications —&gt; luci-app-ddns # 动态域名 DNS<br>LuCI —&gt; Applications —&gt; luci-app-diag-core #core 诊断工具<br>LuCI —&gt; Applications —&gt; luci-app-dnscrypt-proxy #DNSCrypt 解决 DNS 污染<br>LuCI —&gt; Applications —&gt; luci-app-dnscrypt-dnsforwarder #DNSForwarder 防 DNS 污染<br>LuCI —&gt; Applications —&gt; luci-app-dnspod #DNSPod<br>LuCI —&gt; Applications —&gt; luci-app-dump1090 # 民航无线频率(不确定)<br>LuCI —&gt; Applications —&gt; luci-app-dynapoint #DynaPoint(未知)<br>LuCI —&gt; Applications —&gt; luci-app-e2guardian #Web 内容过滤器<br>LuCI —&gt; Applications —&gt; luci-app-filetransfer # 文件传输<br>LuCI —&gt; Applications —&gt; luci-app-firewall # 添加防火墙<br>LuCI —&gt; Applications —&gt; luci-app-flowoffload #Turbo ACC FLOW 转发加速<br>LuCI —&gt; Applications —&gt; luci-app-freifunk-diagnostics #freifunk 组件 诊断(未知)<br>LuCI —&gt; Applications —&gt; luci-app-freifunk-policyrouting #freifunk 组件 策略路由(未知)<br>LuCI —&gt; Applications —&gt; luci-app-freifunk-widgets #freifunk 组件 索引(未知)<br>LuCI —&gt; Applications —&gt; luci-app-frpc # 内网穿透 Frp<br>LuCI —&gt; Applications —&gt; luci-app-fwknopd #Firewall Knock Operator 服务器<br>LuCI —&gt; Applications —&gt; luci-app-guest-wifi #WiFi 访客网络<br>LuCI —&gt; Applications —&gt; luci-app-hd-idle # 硬盘休眠<br>LuCI —&gt; Applications —&gt; luci-app-hnet #Homenet Status 家庭网络控制协议<br>LuCI —&gt; Applications —&gt; luci-app-kooldns #virtual 服务器 ddns 替代方案（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-koolproxy #KP 去广告（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-lxc #LXC 容器管理<br>LuCI —&gt; Applications —&gt; luci-app-meshwizard # 网络设置向导<br>LuCI —&gt; Applications —&gt; luci-app-minidlna # 完全兼容 DLNA / UPnP-AV 客户端的服务器软件<br>LuCI —&gt; Applications —&gt; luci-app-mjpg-streamer # 兼容 Linux-UVC 的摄像头程序<br>LuCI —&gt; Applications —&gt; luci-app-mmc-over-gpio # 添加 SD 卡操作界面（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-multiwan # 多拨虚拟网卡（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-mwan #MWAN 负载均衡<br>LuCI —&gt; Applications —&gt; luci-app-mwan3 #MWAN3 分流助手<br>LuCI —&gt; Applications —&gt; luci-app-n2n_v2 #N2N 内网穿透 N2N v2 virtual服务<br>LuCI —&gt; Applications —&gt; luci-app-nft-qos #QOS 流控 Nftables 版<br>LuCI —&gt; Applications —&gt; luci-app-nlbwmon # 网络带宽监视器<br>LuCI —&gt; Applications —&gt; luci-app-noddos #NodDOS Clients 阻止 DDoS 攻击<br>LuCI —&gt; Applications —&gt; luci-app-ntpc #NTP 时间同步服务器<br>LuCI —&gt; Applications —&gt; luci-app-ocserv #OpenConnect virtual 服务<br>LuCI —&gt; Applications —&gt; luci-app-olsr #OLSR 配置和状态模块<br>LuCI —&gt; Applications —&gt; luci-app-olsr-services #OLSR 服务器<br>LuCI —&gt; Applications —&gt; luci-app-olsr-viz #OLSR 可视化<br>LuCI —&gt; Applications —&gt; luci-app-ocserv #OpenConnect virtual服务（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-openvirtual** #Openvirtual 客户端<br>LuCI —&gt; Applications —&gt; luci-app-openvirtual-server # 易于使用的 Openvirtual 服务器 Web-UI<br>LuCI —&gt; Applications —&gt; luci-app-oscam #OSCAM 服务器（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-p910nd # 打印服务器模块<br>LuCI —&gt; Applications —&gt; luci-app-pagekitee #Pagekite 内网穿透客户端<br>LuCI —&gt; Applications —&gt; luci-app-polipo #Polipo 代理(是一个小型且快速的网页缓存代理)<br>LuCI —&gt; Applications —&gt; luci-app-pppoe-relay #PPPoE NAT 穿透 点对点协议(PPP)<br>LuCI —&gt; Applications —&gt; luci-app-p p t p-server #virtual 服务器 p p t p<br>LuCI —&gt; Applications —&gt; luci-app-privoxy #Privoxy 网络代理(带过滤无缓存)<br>LuCI —&gt; Applications —&gt; luci-app-qos # 流量服务质量(QoS)流控<br>LuCI —&gt; Applications —&gt; luci-app-radicale #CalDAV/CardDAV 同步工具<br>LuCI —&gt; Applications —&gt; luci-app-ramfree # 释放内存<br>LuCI —&gt; Applications —&gt; luci-app-rp-pppoe-server #Roaring Penguin PPPoE Server 服务器<br>LuCI —&gt; Applications —&gt; luci-app-samba # 网络共享(Samba)<br>LuCI —&gt; Applications —&gt; luci-app-samba4 # 网络共享(Samba4)<br>LuCI —&gt; Applications —&gt; luci-app-sfe #Turbo ACC 网络加速(开启 Fast Path 转发加速)<br>LuCI —&gt; Applications —&gt; luci-app-s-s #SS 兲朝上网（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-s-s-libes #SS-libev 服务端<br>LuCI —&gt; Applications —&gt; luci-app-shairplay # 支持 AirPlay 功能<br>LuCI —&gt; Applications —&gt; luci-app-siitwizard #SIIT 配置向导 SIIT-Wizzard<br>LuCI —&gt; Applications —&gt; luci-app-simple-adblock # 简单的广告拦截<br>LuCI —&gt; Applications —&gt; luci-app-simple-softethervirtual** #SoftEther virtual**服务器 NAT 穿透（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-splash #Client-Splash 是无线 MESH 网络的一个热点认证系统<br>LuCI —&gt; Applications —&gt; luci-app-sqm # 流量智能队列管理(QOS)<br>LuCI —&gt; Applications —&gt; luci-app-squid #Squid 代理服务器<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus #S-S R 兲朝上网 Plus+<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include s-s New Versiong # 新 SS 代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include V2ray #V2Ray 透明代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include Kcptun #Kcptun 代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include s-sR Server #S-S R 客户端<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-plus —&gt; Include s-sR Socks and Tunnel #S-S R 代理<br>LuCI —&gt; Applications —&gt; luci-app-S-S R-pro #S-S R-Pro<br>LuCI —&gt; Applications —&gt; luci-app-S-S Rserver-python #s-sR Python 服务器<br>LuCI —&gt; Applications —&gt; luci-app-statistics # 流量监控工具<br>LuCI —&gt; Applications —&gt; luci-app-syncdial # 多拨虚拟网卡(原 macvlan)<br>LuCI —&gt; Applications —&gt; luci-app-tinyproxy #Tinyproxy 是 HTTP(S)代理服务器<br>LuCI —&gt; Applications —&gt; luci-app-transmission #BT 下载工具<br>LuCI —&gt; Applications —&gt; luci-app-travelmate # 旅行路由器<br>LuCI —&gt; Applications —&gt; luci-app-ttyd # 网页终端命令行<br>LuCI —&gt; Applications —&gt; luci-app-udpxy #udpxy 做组播服务器<br>LuCI —&gt; Applications —&gt; luci-app-uhttpd #uHTTPd Web 服务器<br>LuCI —&gt; Applications —&gt; luci-app-unbound #Unbound DNS 解析器<br>LuCI —&gt; Applications —&gt; luci-app-upnp # 通用即插即用 UPnP(端口自动转发)<br>LuCI —&gt; Applications —&gt; luci-app-usb-printer #USB 打印服务器<br>LuCI —&gt; Applications —&gt; luci-app-v2ray-pro #V2Ray 透明代理<br>LuCI —&gt; Applications —&gt; luci-app-vlmcsd #KMS 服务器设置<br>LuCI —&gt; Applications —&gt; luci-app-vnstat #vnStat 网络监控(图表)<br>LuCI —&gt; Applications —&gt; luci-app-virtualbypass #virtual BypassWebUI 绕过 virtual 设置<br>LuCI —&gt; Applications —&gt; luci-app-vsftpd #FTP 服务器<br>LuCI —&gt; Applications —&gt; luci-app-watchcat # 断网检测功能与定时重启<br>LuCI —&gt; Applications —&gt; luci-app-webadmin #Web 管理页面设置<br>LuCI —&gt; Applications —&gt; luci-app-webshell # 网页命令行终端（已弃）<br>LuCI —&gt; Applications —&gt; luci-app-wifischedule #WiFi 计划<br>LuCI —&gt; Applications —&gt; luci-app-wireguard #virtual服务器 WireGuard 状态<br>LuCI —&gt; Applications —&gt; luci-app-wireless-regdb #WiFi 无线<br>LuCI —&gt; Applications —&gt; luci-app-wol #WOL 网络唤醒<br>LuCI —&gt; Applications —&gt; luci-app-wrtbwmon # 实时流量监测<br>LuCI —&gt; Applications —&gt; luci-app-xlnetacc # 迅雷快鸟<br>LuCI —&gt; Applications —&gt; luci-app-zerotier #ZeroTier 内网穿透</p>
+<h2 id="支持-iPv6："><a href="#支持-iPv6：" class="headerlink" title="支持 iPv6："></a>支持 iPv6：</h2><p>Extra packages —&gt; ipv6helper （选定这个后下面几项自动选择了）<br>Network —&gt; odhcp6c<br>Network —&gt; odhcpd-ipv6only<br>LuCI —&gt; Protocols —&gt; luci-proto-ipv6<br>LuCI —&gt; Protocols —&gt; luci-proto-ppp</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee ☕</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Alfred 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Alfred 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Alfred
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://blog.nameidi.top/posts/85d98bc4.html" title="OpenWrt编译 LuCI - Applications添加插件应用说明">http://blog.nameidi.top/posts/85d98bc4.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/OpenWrt/" rel="tag"><i class="fa fa-tag"></i> OpenWrt</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/9f9d4fe5.html" rel="prev" title="【支持1.50】GTA5线上小助手">
+                  <i class="fa fa-chevron-left"></i> 【支持1.50】GTA5线上小助手
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b4d74c1a.html" rel="next" title="精选：电脑上10+个良心软件，分享给你！">
+                  精选：电脑上10+个良心软件，分享给你！ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">162k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"7MHJAdhCVvwQG3qGfKzkPiAm-MdYXbMMI","app_key":"NGjcvEiQ89sWxRTcsVh542ag","server_url":"https://watch.nameidi.top","security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+
+    </div>
+</body>
+</html>

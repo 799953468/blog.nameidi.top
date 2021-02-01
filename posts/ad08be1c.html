@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="1BFE47B53478DD7107FF51441A17B259">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.nameidi.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview Build 19582.1001 to Windows Insiders in the Fast ring.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Announcing Windows 10 Insider Preview Build 19577">
+<meta property="og:url" content="http://blog.nameidi.top/posts/ad08be1c.html">
+<meta property="og:site_name" content="Alfred&#39;s blog">
+<meta property="og:description" content="Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview Build 19582.1001 to Windows Insiders in the Fast ring.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200424/bH9MeqfUr0KH.png">
+<meta property="article:published_time" content="2020-03-05T14:57:27.000Z">
+<meta property="article:modified_time" content="2021-02-01T11:37:47.639Z">
+<meta property="article:author" content="Alfred">
+<meta property="article:tag" content="Insider Preview">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.nameidi.top/blog/20200424/bH9MeqfUr0KH.png">
+
+
+<link rel="canonical" href="http://blog.nameidi.top/posts/ad08be1c.html">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Announcing Windows 10 Insider Preview Build 19577 | Alfred's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154808586-2"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-154808586-2');
+      }
+    </script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9a1e1c3b378849f4938bc1b3a946c43f"}'></script>
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alfred's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Alfred's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">时间不知不觉，我们后知后觉...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a></li>
+        <li class="menu-item menu-item-mikutools"><a href="https://mikutools.nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-tools fa-fw"></i>在线工具</a></li>
+        <li class="menu-item menu-item-homepage"><a href="https://nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-map fa-fw"></i>导航页</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div id="tp-weather-widget"></div>
+<script>
+  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+  window.SeniverseWeatherWidget('show', {
+    flavor: "bubble",
+    location: "WX4FBXXFKE4F",
+    geolocation: true,
+    language: "zh-Hans",
+    unit: "c",
+    theme: "auto",
+    token: "827a4ca8-cb3b-4b3b-9083-772d5f790e94",
+    hover: "enabled",
+    container: "tp-weather-widget"
+  })
+</script>
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What%E2%80%99s-new-in-Build-19577"><span class="nav-number">1.</span> <span class="nav-text">What’s new in Build 19577</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Diagnostic-data-changes-in-Settings"><span class="nav-number">1.1.</span> <span class="nav-text">Diagnostic data changes in Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-new-icons-Windows-Security"><span class="nav-number">1.2.</span> <span class="nav-text">More new icons: Windows Security</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-updates-for-Insiders"><span class="nav-number">2.</span> <span class="nav-text">Other updates for Insiders</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Announcing-PowerToys-0-15-1"><span class="nav-number">2.1.</span> <span class="nav-text">Announcing PowerToys 0.15.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Continuing-the-optional-updates-experiment-with-drivers"><span class="nav-number">2.2.</span> <span class="nav-text">Continuing the optional updates experiment with drivers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-changes-amp-improvements"><span class="nav-number">3.</span> <span class="nav-text">General changes &amp; improvements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixes"><span class="nav-number">4.</span> <span class="nav-text">Fixes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Known-issues"><span class="nav-number">5.</span> <span class="nav-text">Known issues</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Alfred</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/799953468" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:y799953468@gmail.com" title="E-Mail → mailto:y799953468@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/799953468" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.nameidi.top/atom.xml" title="RSS → https:&#x2F;&#x2F;blog.nameidi.top&#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=576stzpgfpa&amp;m=0&amp;c=ff0&amp;cr1=f&amp;f=arial&amp;l=" async="async"></script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.nameidi.top/posts/ad08be1c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Announcing Windows 10 Insider Preview Build 19577
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-05 22:57:27" itemprop="dateCreated datePublished" datetime="2020-03-05T22:57:27+08:00">2020-03-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-01 19:37:47" itemprop="dateModified" datetime="2021-02-01T19:37:47+08:00">2021-02-01</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Windows-10/" itemprop="url" rel="index"><span itemprop="name">Windows 10</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Windows-10/Insider-Preview/" itemprop="url" rel="index"><span itemprop="name">Insider Preview</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/ad08be1c.html" class="post-meta-item leancloud_visitors" data-flag-title="Announcing Windows 10 Insider Preview Build 19577" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note default"><p>Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview <strong>Build 19582.1001</strong> to Windows Insiders in the Fast ring.</p>
+</div>
+<a id="more"></a>
+<p>You can <a target="_blank" rel="noopener" href="https://aka.ms/wip-docs">check out our Windows Insider Program documentation here</a>, including a list of all the new features and updates released in builds so far. Not seeing any of the features in this build? Check your <a target="_blank" rel="noopener" href="https://aka.ms/winsider-settings">Windows Insider Settings</a> to make sure you’re on the Fast ring. <a target="_blank" rel="noopener" href="https://aka.ms/InsiderMissingFeature">Submit feedback here</a> to let us know if things weren’t working the way you expected.</p>
+<p>If you want a complete look at what build is in which Insider ring, head over to <a target="_blank" rel="noopener" href="https://aka.ms/flighthub">Flight Hub</a>. Please note, there will be a slight delay between when a build is flighted and when Flight Hub is updated.</p>
+<h2 id="What’s-new-in-Build-19577"><a href="#What’s-new-in-Build-19577" class="headerlink" title="What’s new in Build 19577"></a>What’s new in Build 19577</h2><h3 id="Diagnostic-data-changes-in-Settings"><a href="#Diagnostic-data-changes-in-Settings" class="headerlink" title="Diagnostic data changes in Settings"></a>Diagnostic data changes in Settings</h3><p>As part of the Microsoft initiative to <a target="_blank" rel="noopener" href="https://blogs.microsoft.com/on-the-issues/2019/04/30/increasing-transparency-and-customer-control-over-data/">increase transparency and control over data</a>, we’re making some changes to the Settings app and Group Policy settings that will start showing up in Windows Insider builds this month. Basic diagnostic data is now known as Required diagnostic data and Full diagnostic data is now Optional diagnostic data. If you’re a commercial customer and choose to send Optional diagnostic data, we will also be providing more granular Group Policy settings to configure the data that’s collected within your organization. We’ll publish more specifics around the new policies when we get closer to the retail release, and in the meantime, check out the <a target="_blank" rel="noopener" href="https://privacy.microsoft.com/en-US/privacy-report">Microsoft Privacy Report</a> for more information around our data collection practices.</p>
+<p><strong>Note: Please make sure your device is set to “Full” before updating to Build 19577. You will not be able to take future flights if your diagnostic level is left at “Enhanced”. AAD/Domain-joined PCs set to “Enhanced” will be blocked from taking Build 19577. For more information, <a target="_blank" rel="noopener" href="https://aka.ms/ddchanges">see this Answers post</a>.</strong></p>
+<h3 id="More-new-icons-Windows-Security"><a href="#More-new-icons-Windows-Security" class="headerlink" title="More new icons: Windows Security"></a>More new icons: Windows Security</h3><p>We’re continuing to roll out updated icons to many of the built-in apps in Windows 10. In today’s build, we’ve updated the Windows Security icon to match <a target="_blank" rel="noopener" href="https://medium.com/microsoft-design/iconic-icons-designing-the-world-of-windows-5e70e25e5416">the new design principles outlined here from the Microsoft Design Team</a>. Unlike many of the built-in apps in Windows 10, which can be updated through the Store, the new Windows Security icon is updated through the OS and will rollout in a future Windows 10 feature update.<br><img data-src="https://img.nameidi.top/blog/20200424/bH9MeqfUr0KH.png"></p>
+<h2 id="Other-updates-for-Insiders"><a href="#Other-updates-for-Insiders" class="headerlink" title="Other updates for Insiders"></a>Other updates for Insiders</h2><h3 id="Announcing-PowerToys-0-15-1"><a href="#Announcing-PowerToys-0-15-1" class="headerlink" title="Announcing PowerToys 0.15.1"></a>Announcing PowerToys 0.15.1</h3><p>Yesterday, during our Windows Insider webcast, the PowerToys Team announced the <a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/releases/tag/v0.15.0">release of PowerToys 0.15.1</a>. PowerToys 0.15.1 contains these improvements:</p>
+<ul>
+<li>Notifies you there’s a new version from within PowerToys</li>
+<li>Removed requirement to always ‘run as admin’</li>
+<li>Added almost 300 unit tests to increase stability and prevent regressions.</li>
+<li>Resolved almost 100 issues</li>
+<li>Made .NET Framework parts of the source run faster with NGEN</li>
+<li>Improved for how we store data locally</li>
+<li>Increased FancyZones compatibility with applications</li>
+<li>Created the <a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/wiki/Version-1.0-Strategy">0 strategy</a>, <a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/wiki/Launcher">the launcher</a>, <a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/wiki/Keyboard-Manager">the keyboard managerspecs</a></li>
+<li>Worked on cleaning up our issue backlog and labels<br><a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/releases/tag/v0.15.0">Get more details about these improvements</a>. If you missed our webcast yesterday, <a target="_blank" rel="noopener" href="https://mixer.com/windowsinsider">watch it on-demand from our Mixer channel!</a></li>
+</ul>
+<h3 id="Continuing-the-optional-updates-experiment-with-drivers"><a href="#Continuing-the-optional-updates-experiment-with-drivers" class="headerlink" title="Continuing the optional updates experiment with drivers"></a>Continuing the optional updates experiment with drivers</h3><p>We’re continuing to look at ways we can improve the update experience on Windows 10 PCs for our customers. <a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2020/01/23/announcing-windows-10-insider-preview-build-19551/">Back in January in Build 19551</a>, we announced we were conducting an experiment related to how we deliver driver updates through Windows Update. During this experiment, drivers categorized as “optional” will not be automatically downloaded and installed on Windows Insider’s PCs running Build 19536 and newer. To install any new optional drivers available for a PC that’s involved in this experiment (including drivers for new devices that might get plugged in to a PC), Insiders can go to <strong>Settings &gt; Update &amp; Security &gt; Windows Update &gt; View optional updates</strong> and manually download these drivers. <strong>We are extending this experiment to now run through the end of March</strong>. (<strong>Note</strong>: This applies ONLY to the latest builds in the Fast ring and not 20H1.)</p>
+<h2 id="General-changes-amp-improvements"><a href="#General-changes-amp-improvements" class="headerlink" title="General changes &amp; improvements"></a>General changes &amp; improvements</h2><ul>
+<li>Following up on <a target="_blank" rel="noopener" href="https://insider.windows.com/en-us/articles/cortana-windows-beta/">our post about the new Cortana app</a>, we wanted to let you know that in addition to timers and instant answers, which lit up last month, assistant conversations are now online. Some examples to try are “tell me a dad joke”, “tell me a bedtime story”, or “rock, paper, scissors.” We appreciate your patience while we worked on this. This is a server-side change, however we’re noting it here for awareness.</li>
+<li>We’ve updated the behavior of Advanced startup (<strong>Settings &gt; Update &amp; Security &gt; Recovery &gt; Advanced startup</strong> “Restart now”) to enable some Ease of Access features to work properly. For example, previously, if the narrator feature was enabled prior to launching Advanced startup, it would stop working. Now, Advanced startup will reboot directly into the Windows Recovery Environment.</li>
+<li>While the Vietnamese alphabet doesn’t include the Latin letters F, J, W, or Z, based on feedback we’re updating the grouping in the Start menu’s all app’s list to account for these letters when using this display language, so that apps like Windows PowerShell are included in the expected group.</li>
+</ul>
+<h2 id="Fixes"><a href="#Fixes" class="headerlink" title="Fixes"></a>Fixes</h2><ul>
+<li>We fixed an issue where input would stop working in some places if clipboard history (WIN + V) was dismissed without pasting anything.</li>
+<li>We fixed an issue resulting in extra characters in the message in File Explorer when no files were listed yet in Recent Files.</li>
+<li>We fixed an issue where, when setting up Windows Hello while using the Arabic display language, the box tracking progress of setup wouldn’t line up with your face.</li>
+<li>We fixed an issue where preferred SafeSearch settings (Settings &gt; Search &gt; Permissions &amp; History) were no longer persisting upgrade.</li>
+<li>We fixed an issue which caused the microphone to sometimes not work on certain devices from Builds 19559 to 19569. If you continue seeing issues with your microphone, please file a problem report in Feedback Hub with <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-insider/at-home/feedback">“recreate my problem” logs</a>.</li>
+<li>We fixed an issue impacting Explorer.exe reliability when navigating in File Explorer for some Insiders.</li>
+<li>We fixed an issue where using <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/win32/rstmgr/using-restart-manager">Restart Manager API</a> to restart explorer.exe would result in all open UWP apps being closed as well.</li>
+<li>We fixed an issue that could result in the DWM crashing when inking on your PC.</li>
+<li>We fixed an issue that could result in Outlook crashing if you typed too many characters into the To field using the Korean IME.</li>
+<li>We fixed an issue where, when using Storage Sense to clean up Windows.old, it might not be totally removed.</li>
+<li>We fixed an issue that could result in Settings hanging when accessing Windows Update Settings.</li>
+<li>We fixed an issue where the Family &amp; Other Accounts page wouldn’t finish loading for some Insiders.</li>
+<li>We fixed an issue resulting in the system potentially bugchecking upon toggling Bluetooth ON and OFF after waking back from sleep.</li>
+<li>We fixed an issue for local account users where, until rebooting, night light would no longer work after attaching your Microsoft account.</li>
+<li>We fixed an issue resulting in the machine not rebooting and kicking off the scan when you selected Microsoft Defender Offline Scan in Windows Security.</li>
+<li>We fixed an issue resulting in Windows Update failing with error 0x80070002 for some users.</li>
+<li>We fixed a high hitting DWM crash that some Insiders were experiencing.</li>
+</ul>
+<h2 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h2><ul>
+<li>BattlEye and Microsoft have found incompatibility issues due to changes in the operating system between some Insider Preview builds and certain versions of BattlEye anti-cheat software. To safeguard Insiders who might have these versions installed on their PC, we have applied a compatibility hold on these devices from being offered affected builds of Windows Insider Preview. <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/help/4526620/updating-to-some-windows-insider-preview-builds-on-devices-with-certai">See this article for details</a>.</li>
+<li>We are aware Narrator and NVDA users that seek the latest release of Microsoft Edge based on Chromium may experience some difficulty when navigating and reading certain Web content. Narrator, NVDA and the Edge teams are aware of these issues. Users of legacy Microsoft Edge will not be affected. NVAccess has released a <a target="_blank" rel="noopener" href="https://www.nvaccess.org/post/nvda-2019-3-released/">NVDA 2019.3</a> that resolves the known issue with Edge.</li>
+<li>We’re looking into reports of the update process hanging for extended periods of time when attempting to install a new build.</li>
+<li>We’re investigating reports that some Insiders are unable to update to newer builds with error 0x8007042b.</li>
+<li>The Documents section under Privacy has a broken icon (just a rectangle).</li>
+<li>When you upgrade with certain languages, like Japanese, the “Installing Windows X%” page isn’t rendering the text correctly (only boxes are displayed).</li>
+<li>The cloud recovery option for Reset this PC isn’t working on this build. Please use the local reinstall option when performing Reset this PC.</li>
+<li>When trying to use Win + PrtScn to capture a screenshot, the image is not saved to the Screenshots directory. For now, you’ll need to use one of the other options for taking screenshots, such as WIN + Shift + S.</li>
+<li>We’re looking into reports where, when running corruption repair (DISM), the process will stop at 84.9%.</li>
+<li>Notifications sometimes have the wrong actions associated with them (for example, a reply box or various buttons).</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee ☕</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Alfred 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Alfred 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>Microsoft
+  </li>
+  <li class="post-copyright-link">
+      <strong>原文链接：</strong>
+      <a href="https://blogs.windows.com/windowsexperience/2020/03/05/announcing-windows-10-insider-preview-build-19577/" title="Announcing Windows 10 Insider Preview Build 19577" rel="noopener" target="_blank">https://blogs.windows.com/windowsexperience/2020/03/05/announcing-windows-10-insider-preview-build-19577/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Insider-Preview/" rel="tag"><i class="fa fa-tag"></i> Insider Preview</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/d440ea1e.html" rel="prev" title="VScode教程">
+                  <i class="fa fa-chevron-left"></i> VScode教程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/5afa565c.html" rel="next" title="Announcing Windows 10 Insider Preview Build 19582">
+                  Announcing Windows 10 Insider Preview Build 19582 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">162k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"7MHJAdhCVvwQG3qGfKzkPiAm-MdYXbMMI","app_key":"NGjcvEiQ89sWxRTcsVh542ag","server_url":"https://watch.nameidi.top","security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+
+    </div>
+</body>
+</html>

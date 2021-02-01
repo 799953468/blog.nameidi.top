@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="1BFE47B53478DD7107FF51441A17B259">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.nameidi.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="VS Code 是一个开源的跨平台开发工具，是我目前用的最顺手的编辑器。本文介绍了一些常用的插件和快捷键，帮你大大提高软件开发的效率。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VScode插件推荐">
+<meta property="og:url" content="http://blog.nameidi.top/posts/d29d421c.html">
+<meta property="og:site_name" content="Alfred&#39;s blog">
+<meta property="og:description" content="VS Code 是一个开源的跨平台开发工具，是我目前用的最顺手的编辑器。本文介绍了一些常用的插件和快捷键，帮你大大提高软件开发的效率。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/jkR8lrOqlpgr.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/rkMEM8GVq63z.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/UjBYMllu4fXh.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/jcKQR1lDtq5D.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/tKtvQBvrNSHJ.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/JfNkWoWWE7de.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/7FSanbPLl4QS.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/QMUOkJs9uXEV.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/iAUJVM4k4Qle.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/jo5VuaBn3N4z.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/BtKm5wsp8Htb.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/4hiACPBvPxGA.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/YD34xPzU1ukb.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/JJIHJHuyL8ig.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/enn1xdBq31L7.jpg">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200225/HYyG2StqVlPi.jpg">
+<meta property="article:published_time" content="2020-02-25T15:18:12.000Z">
+<meta property="article:modified_time" content="2021-02-01T11:37:47.646Z">
+<meta property="article:author" content="Alfred">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.nameidi.top/blog/20200225/jkR8lrOqlpgr.jpg">
+
+
+<link rel="canonical" href="http://blog.nameidi.top/posts/d29d421c.html">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>VScode插件推荐 | Alfred's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154808586-2"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-154808586-2');
+      }
+    </script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9a1e1c3b378849f4938bc1b3a946c43f"}'></script>
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alfred's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Alfred's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">时间不知不觉，我们后知后觉...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a></li>
+        <li class="menu-item menu-item-mikutools"><a href="https://mikutools.nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-tools fa-fw"></i>在线工具</a></li>
+        <li class="menu-item menu-item-homepage"><a href="https://nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-map fa-fw"></i>导航页</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div id="tp-weather-widget"></div>
+<script>
+  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+  window.SeniverseWeatherWidget('show', {
+    flavor: "bubble",
+    location: "WX4FBXXFKE4F",
+    geolocation: true,
+    language: "zh-Hans",
+    unit: "c",
+    theme: "auto",
+    token: "827a4ca8-cb3b-4b3b-9083-772d5f790e94",
+    hover: "enabled",
+    container: "tp-weather-widget"
+  })
+</script>
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">基本插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chinese-Simplified-Language-Pack-for-Visual-Stidio-Code-%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96%E5%8C%85"><span class="nav-number">1.1.</span> <span class="nav-text">Chinese(Simplified) Language Pack for Visual Stidio Code 中文汉化包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open-in-browser-%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.2.</span> <span class="nav-text">open-in-browser 在浏览器中查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Live-S%EF%BF%BD%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E7%94%9F%E6%88%90%E5%AF%B9%E5%BA%94%E7%9A%84%E5%9B%BE%E6%A0%87%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%88%91%E4%BB%AC%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8%E7%9A%84%E6%97%B6%E5%80%99%E7%9B%B4%E6%8E%A5%E9%80%9A%E8%BF%87%E5%9B%BE%E6%A0%87%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%8C%BA%E5%88%86%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%82"><span class="nav-number">1.3.</span> <span class="nav-text">Live S�的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TODO-Highlight-%E9%AB%98%E4%BA%AE"><span class="nav-number">1.4.</span> <span class="nav-text">TODO Highlight 高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Spell-Checker-%E5%8D%95%E8%AF%8D%E6%8B%BC%E5%86%99%E6%A3%80%E6%9F%A5"><span class="nav-number">1.5.</span> <span class="nav-text">Code Spell Checker 单词拼写检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Runner-%E8%BF%90%E8%A1%8C%E9%80%89%E4%B8%AD%E4%BB%A3%E7%A0%81%E6%AE%B5"><span class="nav-number">1.6.</span> <span class="nav-text">Code Runner 运行选中代码段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improt-Cost-%E6%88%90%E6%9C%AC%E6%8F%90%E7%A4%BA"><span class="nav-number">1.7.</span> <span class="nav-text">Improt Cost 成本提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLens-%E6%9F%A5%E7%9C%8B-Git-%E4%BF%A1%E6%81%AF"><span class="nav-number">1.8.</span> <span class="nav-text">GitLens 查看 Git 信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bookmarks-%E4%B9%A6%E7%AD%BE"><span class="nav-number">1.9.</span> <span class="nav-text">Bookmarks 书签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">拓展插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vscode-element-helper"><span class="nav-number">2.1.</span> <span class="nav-text">Vscode-element-helper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Version-Lens-%E5%B7%A5%E5%85%B7%E5%8C%85%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text">Version Lens 工具包版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vetur-VUE-%E8%AF%AD%E8%A8%80%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">Vetur VUE 语言包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WakaTime-%E8%AE%A1%E7%AE%97%E4%BB%A3%E7%A0%81%E5%B7%A5%E4%BD%9C%E9%87%8F"><span class="nav-number">2.4.</span> <span class="nav-text">WakaTime 计算代码工作量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Settings-Sync-VSCode-%E8%AE%BE%E7%BD%AE%E5%90%8C%E6%AD%A5%E5%88%B0-Gist"><span class="nav-number">2.5.</span> <span class="nav-text">Settings Sync VSCode 设置同步到 Gist</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Alfred</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/799953468" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:y799953468@gmail.com" title="E-Mail → mailto:y799953468@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/799953468" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.nameidi.top/atom.xml" title="RSS → https:&#x2F;&#x2F;blog.nameidi.top&#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=576stzpgfpa&amp;m=0&amp;c=ff0&amp;cr1=f&amp;f=arial&amp;l=" async="async"></script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.nameidi.top/posts/d29d421c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VScode插件推荐
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-25 23:18:12" itemprop="dateCreated datePublished" datetime="2020-02-25T23:18:12+08:00">2020-02-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-01 19:37:47" itemprop="dateModified" datetime="2021-02-01T19:37:47+08:00">2021-02-01</time>
+      </span>
+
+  
+    <span id="/posts/d29d421c.html" class="post-meta-item leancloud_visitors" data-flag-title="VScode插件推荐" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note default"><p>VS Code 是一个开源的跨平台开发工具，是我目前用的最顺手的编辑器。本文介绍了一些常用的插件和快捷键，帮你大大提高软件开发的效率。</p>
+</div>
+<a id="more"></a>
+<h2 id="基本插件"><a href="#基本插件" class="headerlink" title="基本插件"></a>基本插件</h2><h3 id="Chinese-Simplified-Language-Pack-for-Visual-Stidio-Code-中文汉化包"><a href="#Chinese-Simplified-Language-Pack-for-Visual-Stidio-Code-中文汉化包" class="headerlink" title="Chinese(Simplified) Language Pack for Visual Stidio Code 中文汉化包"></a>Chinese(Simplified) Language Pack for Visual Stidio Code 中文汉化包</h3><p>对于一些英文不太好的小伙伴，上来第一件事肯定是要切换成中文语言环境，安装汉化包插件之后，按快捷键 Ctrl+Shift+P 调出命令面板，输入 Configure Display Language，选择 zh-ch，然后重启 vs code 即可。<br><img data-src="https://img.nameidi.top/blog/20200225/jkR8lrOqlpgr.jpg"></p>
+<h3 id="open-in-browser-在浏览器中查看"><a href="#open-in-browser-在浏览器中查看" class="headerlink" title="open-in-browser 在浏览器中查看"></a>open-in-browser 在浏览器中查看</h3><p>VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果。<br><img data-src="https://img.nameidi.top/blog/20200225/rkMEM8GVq63z.jpg"></p>
+<h3 id="Live-S�的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。"><a href="#Live-S�的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。" class="headerlink" title="Live S�的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。"></a>Live S�的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。</h3><p><img data-src="https://img.nameidi.top/blog/20200225/UjBYMllu4fXh.jpg"></p>
+<h3 id="TODO-Highlight-高亮"><a href="#TODO-Highlight-高亮" class="headerlink" title="TODO Highlight 高亮"></a>TODO Highlight 高亮</h3><p>如果我们在编写代码时想在某个地方做一个标记，后续再来完善或者修改里面的内容，可以利用此插件高亮显示，之后可以帮助我们快速定位到需要修改的代码行。<br><img data-src="https://img.nameidi.top/blog/20200225/jcKQR1lDtq5D.jpg"></p>
+<h3 id="Code-Spell-Checker-单词拼写检查"><a href="#Code-Spell-Checker-单词拼写检查" class="headerlink" title="Code Spell Checker 单词拼写检查"></a>Code Spell Checker 单词拼写检查</h3><p>我们在编写代码的时候经常会不小心拼写错误造成软件运行失败，安装这个插件后会自动帮我们识别单词拼写错误并且给出修改建议，大大帮我们减轻了排除 bug 的压力。<br><img data-src="https://img.nameidi.top/blog/20200225/tKtvQBvrNSHJ.jpg"></p>
+<h3 id="Code-Runner-运行选中代码段"><a href="#Code-Runner-运行选中代码段" class="headerlink" title="Code Runner 运行选中代码段"></a>Code Runner 运行选中代码段</h3><p>如果你需要学习或者接触各种各样的开发语言，那么 Code Runner 插件可以让你不用搭建各种语言的开发环境，直接通过此插件就可以直接运行对应语言的代码，非常适合学习或测试各种开发语言，使用方式直接右键选择 Run Code，支持大量语言，包括 Node。<br><img data-src="https://img.nameidi.top/blog/20200225/JfNkWoWWE7de.jpg"></p>
+<h3 id="Improt-Cost-成本提示"><a href="#Improt-Cost-成本提示" class="headerlink" title="Improt Cost 成本提示"></a>Improt Cost 成本提示</h3><p>这个插件可以在你导入工具包的时候提示这个包的体积，如果体积过大就需要考虑压缩包，为后期上线优化做准备。<br><img data-src="https://img.nameidi.top/blog/20200225/7FSanbPLl4QS.jpg"></p>
+<h3 id="GitLens-查看-Git-信息"><a href="#GitLens-查看-Git-信息" class="headerlink" title="GitLens 查看 Git 信息"></a>GitLens 查看 Git 信息</h3><p>将光标移到代码行上，即可显示当前行最近的 commit 信息和作者，多人开发的时候十分有用，责任到人，防止甩锅。<br><img data-src="https://img.nameidi.top/blog/20200225/QMUOkJs9uXEV.jpg"></p>
+<h3 id="Bookmarks-书签"><a href="#Bookmarks-书签" class="headerlink" title="Bookmarks 书签"></a>Bookmarks 书签</h3><p>对代码进行书签标记，通过快捷键实现快速跳转到书签位置。</p>
+<h2 id="拓展插件"><a href="#拓展插件" class="headerlink" title="拓展插件"></a>拓展插件</h2><h3 id="Vscode-element-helper"><a href="#Vscode-element-helper" class="headerlink" title="Vscode-element-helper"></a>Vscode-element-helper</h3><p>使用 element-ui 库的可以安装这个插件，编写标签时自动提示 element 标签名称。<br><img data-src="https://img.nameidi.top/blog/20200225/iAUJVM4k4Qle.jpg"></p>
+<h3 id="Version-Lens-工具包版本信息"><a href="#Version-Lens-工具包版本信息" class="headerlink" title="Version Lens 工具包版本信息"></a>Version Lens 工具包版本信息</h3><p>在 package.json 中显示你下载安装的 npm 工具包的版本信息，同时会告诉你当前包的最新版本。<br><img data-src="https://img.nameidi.top/blog/20200225/jo5VuaBn3N4z.jpg"></p>
+<h3 id="Vetur-VUE-语言包"><a href="#Vetur-VUE-语言包" class="headerlink" title="Vetur VUE 语言包"></a>Vetur VUE 语言包</h3><p>VUE 是时下最流行的 js 框架之一，很多公司都会选择基于 VUE 来构建产品，Vetur 对 VUE 提供了很好的语言支持。<br><img data-src="https://img.nameidi.top/blog/20200225/BtKm5wsp8Htb.jpg"></p>
+<h3 id="WakaTime-计算代码工作量"><a href="#WakaTime-计算代码工作量" class="headerlink" title="WakaTime 计算代码工作量"></a>WakaTime 计算代码工作量</h3><p>这是一款时间记录工具，它可以帮助你在 vs code 中记录有效的编程的时间。<br><img data-src="https://img.nameidi.top/blog/20200225/4hiACPBvPxGA.jpg"></p>
+<h3 id="Settings-Sync-VSCode-设置同步到-Gist"><a href="#Settings-Sync-VSCode-设置同步到-Gist" class="headerlink" title="Settings Sync VSCode 设置同步到 Gist"></a>Settings Sync VSCode 设置同步到 Gist</h3><p>有时候我们到了新公司或者换了新电脑需要配置新的开发环境，这时候一个一个下载插件，再重新配置 vs code 就非常麻烦而且你还不一定记得那么全面，通过这个插件我们可以将当前 vs code 中的配置上传到 Gist，之后再通过 Gist 下载，就可以将所有配置同步到新环境中了。</p>
+<p>在 GitHub 首页点击头像，选择 Settings 进入设置页面，点击左侧侧边栏 Developer settings，进入开发者设置。<br><img data-src="https://img.nameidi.top/blog/20200225/YD34xPzU1ukb.jpg"><br>选择 Personal access tokens，点击右侧 Generate new token，填写 token 名称，在下方勾选 Gist。<br><img data-src="https://img.nameidi.top/blog/20200225/JJIHJHuyL8ig.jpg"><br>点击下方的 Generate token 按钮生成一个新的 token。<br><img data-src="https://img.nameidi.top/blog/20200225/enn1xdBq31L7.jpg"><br>将生成的新的 token 保存下来。</p>
+<p>在 vscode 中安装 Settings Sync 插件，输入 Ctrl+Shift+p 输入 Sync，选择更新/上传配置，将 GitHub 中生成的 token 输入，点击回车<br>在控制台中自动生成一串 id，之后便可以通过 token 和 id 进行配置同步。<br>输入 Ctrl+Shift+p 输入 Sync，选择下载配置，输入 token 和 id 即可同步下载。<br><img data-src="https://img.nameidi.top/blog/20200225/HYyG2StqVlPi.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee ☕</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Alfred 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Alfred 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Alfred
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://blog.nameidi.top/posts/d29d421c.html" title="VScode插件推荐">http://blog.nameidi.top/posts/d29d421c.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/53aba25a.html" rel="prev" title="Announcing Windows 10 Insider Preview Build 19569">
+                  <i class="fa fa-chevron-left"></i> Announcing Windows 10 Insider Preview Build 19569
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/d440ea1e.html" rel="next" title="VScode教程">
+                  VScode教程 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">162k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"7MHJAdhCVvwQG3qGfKzkPiAm-MdYXbMMI","app_key":"NGjcvEiQ89sWxRTcsVh542ag","server_url":"https://watch.nameidi.top","security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+
+    </div>
+</body>
+</html>

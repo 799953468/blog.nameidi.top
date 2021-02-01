@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="1BFE47B53478DD7107FF51441A17B259">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.nameidi.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview Build 20197 to Windows Insiders in the Dev Channel.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Announcing Windows 10 Insider Preview Build 20197">
+<meta property="og:url" content="http://blog.nameidi.top/posts/e2a0e14.html">
+<meta property="og:site_name" content="Alfred&#39;s blog">
+<meta property="og:description" content="Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview Build 20197 to Windows Insiders in the Dev Channel.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.nameidi.top/blog/20200821/1.png">
+<meta property="article:published_time" content="2020-08-21T13:40:31.000Z">
+<meta property="article:modified_time" content="2020-08-21T14:01:00.000Z">
+<meta property="article:author" content="Alfred">
+<meta property="article:tag" content="Insider Preview">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.nameidi.top/blog/20200821/1.png">
+
+
+<link rel="canonical" href="http://blog.nameidi.top/posts/e2a0e14.html">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Announcing Windows 10 Insider Preview Build 20197 | Alfred's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154808586-2"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-154808586-2');
+      }
+    </script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9a1e1c3b378849f4938bc1b3a946c43f"}'></script>
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alfred's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Alfred's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">时间不知不觉，我们后知后觉...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a></li>
+        <li class="menu-item menu-item-mikutools"><a href="https://mikutools.nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-tools fa-fw"></i>在线工具</a></li>
+        <li class="menu-item menu-item-homepage"><a href="https://nameidi.top/" rel="noopener" target="_blank"><i class="fa fa-map fa-fw"></i>导航页</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div id="tp-weather-widget"></div>
+<script>
+  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+  window.SeniverseWeatherWidget('show', {
+    flavor: "bubble",
+    location: "WX4FBXXFKE4F",
+    geolocation: true,
+    language: "zh-Hans",
+    unit: "c",
+    theme: "auto",
+    token: "827a4ca8-cb3b-4b3b-9083-772d5f790e94",
+    hover: "enabled",
+    container: "tp-weather-widget"
+  })
+</script>
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What%E2%80%99s-new-in-Build-20197"><span class="nav-number">1.</span> <span class="nav-text">What’s new in Build 20197</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bringing-Disk-Management-into-Settings"><span class="nav-number">1.1.</span> <span class="nav-text">Bringing Disk Management into Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADDED-Note-about-the-new-post-update-experience"><span class="nav-number">1.2.</span> <span class="nav-text">[ADDED] Note about the new post-update experience</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-updates-for-Insiders"><span class="nav-number">2.</span> <span class="nav-text">Other updates for Insiders</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Your-Phone-Apps-experience-is-now-gradually-rolling-out-to-General-Public"><span class="nav-number">2.1.</span> <span class="nav-text">Your Phone Apps experience is now gradually rolling out to General Public</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Changes-and-Improvements"><span class="nav-number">3.</span> <span class="nav-text">Changes and Improvements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixes"><span class="nav-number">4.</span> <span class="nav-text">Fixes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Known-issues"><span class="nav-number">5.</span> <span class="nav-text">Known issues</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Alfred</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/799953468" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:y799953468@gmail.com" title="E-Mail → mailto:y799953468@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/799953468" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;799953468" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.nameidi.top/atom.xml" title="RSS → https:&#x2F;&#x2F;blog.nameidi.top&#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=576stzpgfpa&amp;m=0&amp;c=ff0&amp;cr1=f&amp;f=arial&amp;l=" async="async"></script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.nameidi.top/posts/e2a0e14.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Announcing Windows 10 Insider Preview Build 20197
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-08-21 21:40:31 / 修改时间：22:01:00" itemprop="dateCreated datePublished" datetime="2020-08-21T21:40:31+08:00">2020-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Windows-10/" itemprop="url" rel="index"><span itemprop="name">Windows 10</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Windows-10/Insider-Preview/" itemprop="url" rel="index"><span itemprop="name">Insider Preview</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/e2a0e14.html" class="post-meta-item leancloud_visitors" data-flag-title="Announcing Windows 10 Insider Preview Build 20197" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note default"><p>Hello Windows Insiders, today we’re releasing Windows 10 Insider Preview <strong>Build 20197</strong> to Windows Insiders in the Dev Channel.</p>
+</div>
+<a id="more"></a>
+<h2 id="What’s-new-in-Build-20197"><a href="#What’s-new-in-Build-20197" class="headerlink" title="What’s new in Build 20197"></a>What’s new in Build 20197</h2><h3 id="Bringing-Disk-Management-into-Settings"><a href="#Bringing-Disk-Management-into-Settings" class="headerlink" title="Bringing Disk Management into Settings"></a>Bringing Disk Management into Settings</h3><p>We mentioned we had more Settings work on the way, and here’s the next one – as of today’s build you’ll now be able to manage your disks and volumes from within the Settings app. This includes tasks such as viewing disk information, creating and formatting volumes, and assigning drive letters.</p>
+<p>Unlike the existing Disk Management MMC snap-in, this modern experience was built from the ground up to with accessibility in mind. It also features better integration with features such as Storage Spaces and the Storage breakdown page.</p>
+<p>Go to <strong>Settings &gt; System &gt; Storage</strong> and <strong>click Manage Disks and Volumes</strong> to get started. We’d love to hear your feedback once you try it out.<br><img data-src="https://img.nameidi.top/blog/20200821/1.png"></p>
+<p>The existing Disk Management MMC snap-in is still available for those that need it.</p>
+<h3 id="ADDED-Note-about-the-new-post-update-experience"><a href="#ADDED-Note-about-the-new-post-update-experience" class="headerlink" title="[ADDED] Note about the new post-update experience"></a>[ADDED] Note about the new post-update experience</h3><p>The new post update experience with the Tips app mentioned with  was a trial run for this experience to get feedback and gauge interest and specific only to Build 20190. You will not see this experience on newer builds. Insiders may see other experiences like this one on newer builds coming soon.</p>
+<h2 id="Other-updates-for-Insiders"><a href="#Other-updates-for-Insiders" class="headerlink" title="Other updates for Insiders"></a>Other updates for Insiders</h2><h3 id="Your-Phone-Apps-experience-is-now-gradually-rolling-out-to-General-Public"><a href="#Your-Phone-Apps-experience-is-now-gradually-rolling-out-to-General-Public" class="headerlink" title="Your Phone Apps experience is now gradually rolling out to General Public"></a>Your Phone Apps experience is now gradually rolling out to General Public</h3><p>We are excited to announce that the Your Phone apps feature which was highlighted during Aug 5th Samsung Unpacked event is now gradually rolling out to General Public. As a reminder, Your Phone apps feature allows you to instantly access your Android phone’s mobile apps directly from your Windows 10 PC. You can conveniently pin your favorite mobile apps to your Taskbar or Start menu on your PC for quick and easy access. When you launch an app, it opens in a separate window outside of the Your Phone app enabling you to multitask. So, whether you need to quickly reply to a conversation, respond to your social posts, or order food, you can do it fast using your PC’s large screen, keyboard, mouse, pen and touch screen alongside your other PC apps!</p>
+<p>Please see the feature requirements below including <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/help/4551890/supported-devices-for-your-phone-experiences">list of supported phones</a> and well as <a target="_blank" rel="noopener" href="https://answers.microsoft.com/en-us/insider/forum/all/apps-feature-your-phone-app/257c45ca-852a-4fce-93a4-6302c20e2e39">this FAQ here on Microsoft Answers</a>.</p>
+<p>Apps feature requirements:</p>
+<ul>
+<li>PC running Windows 10 October 2018 Update or later. However, we always recommend updating to the latest version of Windows 10.</li>
+<li>Your Phone app (1.20071.88) and Link to Windows (2.0).</li>
+<li>Available on select Android phones running Android 9.0 or greater with the Link to Windows integration. Check out the list of supported phones <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/help/4551890/supported-devices-for-your-phone-experiences">here</a>.</li>
+<li>Phone and PC must be on the same Wi-Fi network.</li>
+</ul>
+<p>This is a gradual rollout, so it may take few days for Apps to show up within the Your Phone app. Give this feature a try and continue to provide us with your valuable feedback within the Your Phone app under Settings -&gt; Send Feedback.</p>
+<h2 id="Changes-and-Improvements"><a href="#Changes-and-Improvements" class="headerlink" title="Changes and Improvements"></a>Changes and Improvements</h2><ul>
+<li>*e’re updating the <a target="_blank" rel="noopener" href="http://aka.ms/wip20161">ALT + Tab behavior with Microsoft Edge tabs</a> to now have a default of displaying at most 5 tabs, rather than any recent tabs. If at any point you’d like to change this, you can under Settings &gt; System &gt; Multitasking.</li>
+<li>We’re exploring including a Web Browsing section <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-insider/at-home/Whats-new-wip-at-home-1903#updated-settings-homepage">in the Settings header</a>, and Insiders may start to see this.</li>
+<li>Going forward only the currently active profile picture will display under Your Info in Settings.</li>
+<li>Based on feedback we’re turning off ESENT Warning Event ID 642.</li>
+<li>It’s now possible to select the new Microsoft Edge as your desired app in Assigned Access.</li>
+<li>We’ve updated Narrator so that now when using the Microsoft Pinyin IME, Narrator is able to distinguish candidate characters/words by providing detailed reading information.</li>
+</ul>
+<h2 id="Fixes"><a href="#Fixes" class="headerlink" title="Fixes"></a>Fixes</h2><ul>
+<li>We fixed an issue where the letter headers in the Start menu’s all apps list had unnecessary left padding when the all apps list was set to hidden.</li>
+<li>We fixed an issue where ALT + Tabbing to a browser tab sometimes moved the previously active browser tab to the front of the Alt + Tab list as well.</li>
+<li>We fixed an issue where if you’d pinned a website to your taskbar and then moved your Microsoft Edge window with that site open over to a different virtual desktop, the pinned sit wouldn’t show the corresponding open tabs on that new desktop.</li>
+<li>We fixed an issue where the sysprep command was failing with the error 0x80073CFA in the last few builds.</li>
+<li>We fixed an issue where Group Policy Editor was showing a popup error about WnsEndpoint_Policy in the last few flights.</li>
+<li>We fixed an issue where the Get-Volume PowerShell command wasn’t recognizing volumes in the exFAT format.</li>
+<li>We fixed an issue impacting explorer.exe launch performance when booting up and logging in for the first time.</li>
+<li>We fixed an issue where pinned File Explorer folders in Start would appear with a darker background than other tiles in light mode.</li>
+<li>We fixed a race condition that could result in the Font Settings page crashing.</li>
+<li>We fixed an issue where Font Settings and Themes Settings were displaying the old style of Microsoft Store icon.</li>
+<li>We fixed an issue that could result in the Network Status page in Settings showing an old network name, rather than the one that you’re currently connected to and inconsistent with what the network flyout displayed.</li>
+<li>We fixed an issue resulting in certain VPNs with the option “Automatically use my Windows log-on name and password (and domain, if any) enabled no longer connecting automatically.</li>
+<li>We fixed an issue resulting in some Insiders experiencing a bugcheck in recent builds citing a hyperguard violation.</li>
+<li>We fixed an issue when using the search box in File Explorer, where pressing the enter key would result in keyboard focus jumping to the quick access section of the navigation pane rather than to the search results.</li>
+<li>We fixed an issue with the Microsoft Pinyin IME, where typing certain phrases would result in the candidate pane unexpectedly dismissing.</li>
+<li>We fixed an issue with the Microsoft Pinyin IME, where when using double pinyin style, when typing something like “goldb;du” where the first candidate could be an English word the conversion wouldn’t work.</li>
+<li>We fixed an issue when typing with the Japanese IME that could result in not being able to input symbols using Shift+ into password fields sometimes.</li>
+<li>We fixed an issue that could result in certain apps crashing when typing incorrect combinations with the Chinese Traditional DaYi IME.</li>
+<li>We fixed an issue with the Microsoft Bopomofo IME where it was consuming Shift key up events when they resulted in IME mode toggle actions.</li>
+<li>We fixed an issue that could result in a CTFMON.exe when changing focus to certain apps (like Outlook) while typing with an IME.</li>
+<li>We fixed an issue where ImmGetCompositionString wasn’t returning the correct IME composition string for YOMI text fields.</li>
+<li>We fixed an issue where the Windows key on the full touch keyboard layout wouldn’t become highlighted after tapping on it in recent builds.</li>
+<li>We fixed an issue when using Narrator where Scan Mode wouldn’t stay off in Microsoft Teams.</li>
+<li>We fixed an issue resulting in Microsoft Flight Simulator failing to launch on the previous two flights with an error citing: “The filename, directory name, or volume label syntax is incorrect”.</li>
+</ul>
+<h2 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h2><ul>
+<li>We’re working on a fix for an issue where some Microsoft Store games protected with Easy Anti-Cheat may fail to launch.</li>
+<li>We’re looking into reports of the update process hanging for extended periods of time when attempting to install a new build.</li>
+<li>We’re working on a fix for an issue where the min/max/close buttons are stuck in their original positions after resizing a UWP app. If you move the app window the position should update.</li>
+<li>We’re investigating reports that the new taskbar experience for pinned sites isn’t working for some sites.</li>
+<li>We’re working on a fix to enable live preview for pinned site tabs.</li>
+<li>We’re working on enabling the new taskbar experience for existing pinned sites. In the meantime, you can unpin the site from the taskbar, remove it from the edge://apps page, and then re-pin the site.</li>
+<li>We’re working on a fix for an issue where pinned sites don’t show all open tabs for a domain. In the meantime, you can fix this by pinning the site’s homepage rather than a specific page (e.g. pin microsoft.com rather than microsoft.com/windows).</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee ☕</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Alfred 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Alfred 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>Microsoft
+  </li>
+  <li class="post-copyright-link">
+      <strong>原文链接：</strong>
+      <a href="https://blogs.windows.com/windows-insider/2020/08/21/announcing-windows-10-insider-preview-build-20197/" title="Announcing Windows 10 Insider Preview Build 20197" rel="noopener" target="_blank">https://blogs.windows.com/windows-insider/2020/08/21/announcing-windows-10-insider-preview-build-20197/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Insider-Preview/" rel="tag"><i class="fa fa-tag"></i> Insider Preview</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/904e9bb7.html" rel="prev" title="Announcing Windows 10 Insider Preview Build 20190">
+                  <i class="fa fa-chevron-left"></i> Announcing Windows 10 Insider Preview Build 20190
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/aaa93b92.html" rel="next" title="Announcing Windows 10 Insider Preview Build 20206">
+                  Announcing Windows 10 Insider Preview Build 20206 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">162k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            const target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"7MHJAdhCVvwQG3qGfKzkPiAm-MdYXbMMI","app_key":"NGjcvEiQ89sWxRTcsVh542ag","server_url":"https://watch.nameidi.top","security":true};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+    <div class="pjax">
+
+
+    </div>
+</body>
+</html>
