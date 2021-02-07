@@ -34,13 +34,13 @@
 <meta property="og:site_name" content="Alfred&#39;s blog">
 <meta property="og:description" content="以下教程中的操作涉及到命令行操作，本人亲测不会影响到系统的正常使用，但是如果在按照教程操作过程中发生任何系统或硬件的损坏，本人无法负责。望小白三思！！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.nameidi.top/blog/20200205/9MmkKuyExI1T.png">
+<meta property="og:image" content="https://public.nameidi.top:7443/image/20200205/9MmkKuyExI1T.png">
 <meta property="article:published_time" content="2020-02-04T16:22:02.000Z">
 <meta property="article:modified_time" content="2020-02-04T16:22:02.000Z">
 <meta property="article:author" content="Alfred">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.nameidi.top/blog/20200205/9MmkKuyExI1T.png">
+<meta name="twitter:image" content="https://public.nameidi.top:7443/image/20200205/9MmkKuyExI1T.png">
 
 
 <link rel="canonical" href="http://blog.nameidi.top/posts/8fa9a229.html">
@@ -375,7 +375,7 @@
 </div>
 <a id="more"></a>
 <p>Win10 可以通过高级重启进入一个纯命令行的界面，在这个界面下，可以几乎不受限制的操作文件/文件夹，也就可以对任何程序/数据的文件/文件夹进行复制/剪切操作。<br>之后再利用 mklink 命令，制作一个文件/文件夹的映射，即可让系统完全和之前一样工作。</p>
-<p>首先是通过高级重启进入命令行模式：<br><img data-src="https://img.nameidi.top/blog/20200205/9MmkKuyExI1T.png"><br>如图所示， 进入 系统设置 -&gt; 升级&amp;安全 -&gt; 恢复 -&gt; 高级重启 -&gt; 立刻重启 来重启电脑到恢复模式；</p>
+<p>首先是通过高级重启进入命令行模式：<br><img data-src="https://public.nameidi.top:7443/image/20200205/9MmkKuyExI1T.png"><br>如图所示， 进入 系统设置 -&gt; 升级&amp;安全 -&gt; 恢复 -&gt; 高级重启 -&gt; 立刻重启 来重启电脑到恢复模式；</p>
 <p>在恢复模式�sers D:\Users /e /v /i /g /h /k /o /x /b /c</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">需要注意一下的是，没必要事先创建空文件夹 &#96;D:\KnairWang&#96;， 这个指令会自动创建目标文件夹。</span><br><span class="line"></span><br><span class="line">然后用 &#96;ren&#96; 指令来把原来的用户文件夹改个名字，这样就不用删除文件夹，也不会占用路径。</span><br><span class="line">&#96;ren&#96; 指令也可以用 &#96;ren &#x2F;?&#96; 来打印帮助信息，这个命令太简单，不详细讲述了，实在不会用的可以在网上搜索一下。</span><br><span class="line"></span><br><span class="line">然后就是做一下文件夹映射了：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>mklink /J C:\Users D:\Users</p>
