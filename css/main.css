@@ -2961,3 +2961,21 @@ hr {
   position: sticky;
   z-index: 99;
 }
+.footer-inner {
+  box-sizing: border-box;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: calc(100% - 20px);
+}
+.wordcount {
+  display: inline;
+}
+.busuanzi-count {
+  display: inline;
+}
+.busuanzi-count::before {
+  content: '|';
+  margin: 0 0.5em;
+}
