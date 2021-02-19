@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.nameidi.top/tags/index.html</loc>
+    
+    <lastmod>2021-02-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.nameidi.top/posts/c808855e.html</loc>
     
     <lastmod>2021-02-02</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.nameidi.top/posts/4d22b574.html</loc>
     
     <lastmod>2021-02-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.nameidi.top/tags/index.html</loc>
-    
-    <lastmod>2021-02-01</lastmod>
     
   </url>
   
